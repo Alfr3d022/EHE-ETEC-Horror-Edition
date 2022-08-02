@@ -1,0 +1,5 @@
+sceneSetups:
+- path: "Assets/Scenes/CenaCorreCome\xE7o.unity"
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

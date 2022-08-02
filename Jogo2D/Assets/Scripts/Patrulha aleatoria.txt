@@ -1,0 +1,33 @@
+transform.position = Vector2.MoveTowards(transform.position, posicao.position, velocidade * Time.deltaTime);
+
+            float dist = Vector2.Distance(transform.position, posicao.position);
+
+            if (posicao.position.x > transform.position.x)
+            {
+                animacao.SetBool("andandoD", true);
+            }
+            else
+            {
+                animacao.SetBool("andandoD", false);
+            }
+            if (posicao.position.x < transform.position.x)
+            {
+                animacao.SetBool("andandoE", true);
+            }
+            else
+            {
+                animacao.SetBool("andandoE", false);
+            }
+
+            if (dist <= .2f)
+            {
+                if (tempo <= 0)
+                {
+                    posicao.position = new Vector2(Random.Range(XMax, XMin), Random.Range(YMax, YMin));
+                    tempo = tempoEspera;
+                }
+                else
+                {
+                    tempo -= Time.deltaTime;
+                }
+            }
